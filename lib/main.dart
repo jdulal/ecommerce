@@ -1,4 +1,5 @@
 import 'package:ecommerce/cat/horizontallist.dart';
+import 'package:ecommerce/products/products.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
@@ -66,6 +67,15 @@ class _MyHomeState extends State<MyHome> {
             ),
 
            HorizontalList(),
+
+            Padding(padding: const EdgeInsets.only(top: 8.0, left: 8.0,),
+            child: Text('Popular Products', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.purpleAccent),),
+            ),
+
+            Container(
+              height: 400.0,
+              child: Products(),
+            )
           ],
         ),
       ),

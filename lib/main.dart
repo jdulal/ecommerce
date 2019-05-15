@@ -1,3 +1,4 @@
+import 'package:ecommerce/cat/horizontallist.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
@@ -10,8 +11,7 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  @override
-  Widget imageCarousel=new Container(
+  Widget imageCarousel= Container(
     height: 225.0,
     child: Carousel(
       overlayShadow: false,
@@ -32,6 +32,7 @@ class _MyHomeState extends State<MyHome> {
       animationDuration: Duration(microseconds: 1500),
     ),
   );
+  @override
 
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,13 +46,14 @@ class _MyHomeState extends State<MyHome> {
             onPressed: null,
             ),
             IconButton(icon: Icon(Icons.shopping_basket,color:Colors.white),
-            onPressed: (){
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  //builder: (BuildContext context)=> Cart(),
-              ),
-              );
-            },
+            onPressed: null,
+            // (){
+            //   Navigator.of(context).push(
+            //     MaterialPageRoute(
+            //       //builder: (BuildContext context)=> Cart(),
+            //   ),
+            //   );
+            // },
             ),
           ],
         ),
@@ -59,7 +61,11 @@ class _MyHomeState extends State<MyHome> {
           children: <Widget>[
             SizedBox(height: 5.0,),
             imageCarousel,
-            
+            Padding(padding: const EdgeInsets.only(top: 8.0, left: 8.0,),
+            child: Text('Popular Categories', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.purpleAccent),),
+            ),
+
+           HorizontalList(),
           ],
         ),
       ),
